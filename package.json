@@ -1,7 +1,7 @@
 {
   "name": "Inspection",
   "version": "1.0.0",
-  "description": "Demo for Flicker",
+  "description": "Demo for Flickr",
   "main": "index.js",
   "scripts": {
     "start": "node node_modules/.bin/webpack-dev-server --content-base app --port 8081",

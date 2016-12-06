@@ -1,3 +1,3 @@
 module.exports = {
-  FLIKER_API_KEY: ''
+  FLICKR_API_KEY: ''
 };
