@@ -1,0 +1,30 @@
+<header>
+	<section class="container">
+		<div class="row">
+			<div class="logo">
+				<h3>
+					<a href="#">Inspection</a>
+				</h3>
+			</div>
+		
+			<div class="search-bar pull-right">
+				<input ng-change="dashboard.resetParams()" ng-blur="dashboard.clearSuggestion()" ng-model="dashboard.search.keyword" placeholder="Search">
+				<ul ng-if="dashboard.tagSuggestions.length > 0" class="suggestion">
+					<li ng-repeat="tag in dashboard.tagSuggestions" ng-click="dashboard.selectSuggestion(tag._content)"> {{tag._content}}</li> 
+				</ul>
+			</div>
+	</section>
+</header>
+
+<div class="container gallery-main">
+  <div class="row" infinite-scroll="dashboard.addMorePhotos()" infinite-scroll-distance='1' infinite-scroll-disabled="dashboard.photoLoading" infinite-scroll-container="parent" >
+    <div  ng-repeat="photo in dashboard.photos" >
+		  <div class="col-md-3 col-sm-3 col-xs-12">
+			  <div class="thumbnail">
+				  <div class="image-title"> {{photo.title}} </div>  
+				  <img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}.jpg"/>
+			  </div>
+			</div>
+		</div>
+  </div>
+</div>
